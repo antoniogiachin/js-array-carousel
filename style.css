@@ -72,9 +72,12 @@
 .col-30{
     width: 30%;
     height: 100%;
+    position: relative;    
+}
+
+.thumbs-container{
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 .col-right{

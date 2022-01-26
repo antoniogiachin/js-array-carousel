@@ -11,22 +11,62 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-// //Foto
-let mainImg="";
+// Inizializzo variabile div main img
+let mainImg = '';
 
-// Ciclo immagini
+let thumbImg = '';
+
+//ciclo elementi array for
 for (let i = 0; i < items.length; i++){
-    mainImg += `<div class="img-big"> <img src="${items[i]}"><div class="description"> <span>${title[i]}</span> <p> ${text[i]} </p> </div> </div>`
-    console.log(mainImg)    
+    mainImg += `<div class="img-big"> <img src="${items[i]}" > <div class ="description"> <span class = "country">${title[i]}</span> <p class="country-text">${text[i]}</p> </div> </div>`;
+
+    thumbImg += `<div class= "col-right"> <img class="img-thumb" src="${items[i]}"> </div>`;
 }
 
-//Recupero col-70 e inserisco il for
-document.querySelector('.col-70').innerHTML = mainImg;
+//inserisco i DIV creati con il ciclo all'interno del contenitore .col-70 & .col-30
 
-//Aggiungo active, contatore
-let currentImgBig = 0;
+//col-70
+let colBig = document.querySelector(".col-70");
+colBig.innerHTML = mainImg;
+
+//col-30
+let colLittle = document.querySelector(".thumbs-container");
+colLittle.innerHTML=thumbImg;
+
+// Provo a impostare bottone
+let imgBigCounter = 0;
+
+let imgThumbCounter = 0;
+
+// let imgBigEraser = -1;
 
 let imgBig = document.getElementsByClassName('img-big');
-imgBig[currentImgBig].classList.add('active')
 
+imgBig[imgBigCounter].classList.add('active');
+
+let imgThumb = document.getElementsByClassName('img-thumb');
+imgThumb[imgThumbCounter].classList.add('active');
+
+// const down = document.querySelector('.down');
+// down.addEventListener('click',
+
+//     function(){
+
+//         imgBigCounter += 6 - 5;
+//         imgBigEraser += 1
+//         console.log(imgBigCounter);
+
+//         imgBig[imgBigCounter].classList.add('active')
+//         imgBig[imgBigEraser].classList.remove('active')
+
+//     }
+
+
+// );
+
+
+// for (let i = 0 ; i < imgBig.length ; i++){
+//     let imgBigAlternate = imgBig[i];
+//     console.log(imgBigAlternate);
+// }
 
