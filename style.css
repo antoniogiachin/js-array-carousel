@@ -55,16 +55,8 @@
     color: #fff;    
 }
 
-.country, .country-text{
-    display: none;
-}
-
 .country{
     font-weight: bold;
-}
-
-.country.active, .country-text.active{
-    display: block;
 }
 
 
