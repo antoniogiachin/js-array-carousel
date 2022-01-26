@@ -14,14 +14,13 @@ const text = [
 //Foto
 let mainImg;
 
-//Description
-let mainDesc;
 
 
 // Ciclo immagini
 for (let i = 0; i < items.length; i++){
-    mainImg = `<div class="img-big"> <img src="${items[i]}"> </div>`
-    console.log(mainImg)
-    mainDesc = `<div class="description"> <span>${title[i]}</span> <p> ${text[i]} </p></div>`
-    console.log(mainDesc)
+    mainImg += `<div class="img-big"> <img src="${items[i]}"><div class="description"> <span>${title[i]}</span> <p> ${text[i]} </p> </div> </div>`
+    console.log(mainImg)    
 }
+
+//Recupero col-70 e inserisco il for
+document.querySelector('.col-70').innerHTML = mainImg;
