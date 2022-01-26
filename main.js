@@ -11,10 +11,8 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-//Foto
-let mainImg;
-
-
+// //Foto
+let mainImg="";
 
 // Ciclo immagini
 for (let i = 0; i < items.length; i++){
@@ -24,3 +22,11 @@ for (let i = 0; i < items.length; i++){
 
 //Recupero col-70 e inserisco il for
 document.querySelector('.col-70').innerHTML = mainImg;
+
+//Aggiungo active, contatore
+let currentImgBig = 0;
+
+let imgBig = document.getElementsByClassName('img-big');
+imgBig[currentImgBig].classList.add('active')
+
+
