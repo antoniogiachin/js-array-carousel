@@ -14,15 +14,14 @@ const text = [
 //Foto
 let mainImg;
 
-//Paese
-let mainCountry;
+//Description
+let mainDesc;
 
-//Testo
-let mainText;
 
 // Ciclo immagini
 for (let i = 0; i < items.length; i++){
-    mainImg += `<div class="img-big"> <img src="${items[i]}> </div>`
-    console.log('mainImg')
-
+    mainImg = `<div class="img-big"> <img src="${items[i]}"> </div>`
+    console.log(mainImg)
+    mainDesc = `<div class="description"> <span>${title[i]}</span> <p> ${text[i]} </p></div>`
+    console.log(mainDesc)
 }
