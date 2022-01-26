@@ -38,35 +38,17 @@ let imgBigCounter = 0;
 
 let imgThumbCounter = 0;
 
-// let imgBigEraser = -1;
+let imgBigEraser = -1;
 
 let imgBig = document.getElementsByClassName('img-big');
+//img-big 0 , img-big 1, img-big 2, img-big 3, img-big 4
 
 imgBig[imgBigCounter].classList.add('active');
 
 let imgThumb = document.getElementsByClassName('img-thumb');
+//img-thumb 0 , img-thumb 1, img-thumb 2, img-thumb 3, img-thumb 4
+
 imgThumb[imgThumbCounter].classList.add('active');
 
-// const down = document.querySelector('.down');
-// down.addEventListener('click',
 
-//     function(){
-
-//         imgBigCounter += 6 - 5;
-//         imgBigEraser += 1
-//         console.log(imgBigCounter);
-
-//         imgBig[imgBigCounter].classList.add('active')
-//         imgBig[imgBigEraser].classList.remove('active')
-
-//     }
-
-
-// );
-
-
-// for (let i = 0 ; i < imgBig.length ; i++){
-//     let imgBigAlternate = imgBig[i];
-//     console.log(imgBigAlternate);
-// }
 
