@@ -26,29 +26,89 @@ for (let i = 0; i < items.length; i++){
 //inserisco i DIV creati con il ciclo all'interno del contenitore .col-70 & .col-30
 
 //col-70
-let colBig = document.querySelector(".col-70");
+const colBig = document.querySelector(".col-70");
 colBig.innerHTML = mainImg;
 
 //col-30
-let colLittle = document.querySelector(".thumbs-container");
+const colLittle = document.querySelector(".thumbs-container");
 colLittle.innerHTML=thumbImg;
 
-// Provo a impostare bottone
-let imgBigCounter = 0;
+// Imposto contatore per click
+let currentSlide = 0;
 
-let imgThumbCounter = 0;
-
-let imgBigEraser = -1;
-
-let imgBig = document.getElementsByClassName('img-big');
+// Recupero tutte le img-big 
+const imgBig = document.getElementsByClassName('img-big');
 //img-big 0 , img-big 1, img-big 2, img-big 3, img-big 4
+console.log(imgBig);
 
-imgBig[imgBigCounter].classList.add('active');
+imgBig[currentSlide].classList.add('active');
 
-let imgThumb = document.getElementsByClassName('img-thumb');
+// recupero tutte le img-thumb
+const imgThumb = document.getElementsByClassName('img-thumb');
 //img-thumb 0 , img-thumb 1, img-thumb 2, img-thumb 3, img-thumb 4
 
-imgThumb[imgThumbCounter].classList.add('active');
+imgThumb[currentSlide].classList.add('active');
 
+// //Ascoltatore di eventi per pulsante down
+const down = document.querySelector('.down');
+down.addEventListener('click',
 
+    function(){
+        
+        // per non superare il 4
+        if(currentSlide< imgBig.length - 1){
+
+            // Rimuovo la classe active del 0
+            imgBig[currentSlide].classList.remove('active');
+            imgThumb[currentSlide].classList.remove('active');
+
+            // incremento lo slide e aggiungo  classe active 
+            currentSlide++;
+            imgBig[currentSlide].classList.add('active');
+            imgThumb[currentSlide].classList.add('active');
+
+        }  else {
+            // Setto il ciclo
+            imgBig[currentSlide].classList.remove('active');
+            imgThumb[currentSlide].classList.remove('active')
+
+            // forzo lo slide a 0
+            currentSlide = 0;
+            imgBig[currentSlide].classList.add('active');
+            imgThumb[currentSlide].classList.add('active');
+        }     
+
+    }
+
+);
+
+// stessa cosa di up, ma decremento lo slider e evito che mi scenda sotto 0
+const up = document.querySelector('.up');
+up.addEventListener('click',
+
+    function(){
+        
+        if(currentSlide > 0){
+
+            imgBig[currentSlide].classList.remove('active');
+            imgThumb[currentSlide].classList.remove('active');
+
+            currentSlide--;
+            imgBig[currentSlide].classList.add('active');
+            imgThumb[currentSlide].classList.add('active');
+
+        } else{
+            //Setto il ciclo
+            imgBig[currentSlide].classList.remove('active');
+            imgThumb[currentSlide].classList.remove('active')
+
+            // forzo lo slide ad andare all'ultima slide
+            currentSlide = imgBig.length -1;
+            imgBig[currentSlide].classList.add('active');
+            imgThumb[currentSlide].classList.add('active');
+        }       
+
+    }
+
+);
 
