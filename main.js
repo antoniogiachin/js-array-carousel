@@ -18,9 +18,17 @@ let thumbImg = '';
 
 //ciclo elementi array for
 for (let i = 0; i < items.length; i++){
-    mainImg += `<div class="img-big"> <img src="${items[i]}" > <div class ="description"> <span class = "country">${title[i]}</span> <p class="country-text">${text[i]}</p> </div> </div>`;
+    mainImg += `<div class="img-big"> 
+                    <img src="${items[i]}" > 
+                    <div class ="description"> 
+                        <span class = "country">${title[i]}</span> 
+                        <p class="country-text">${text[i]}</p> 
+                    </div> 
+                </div>`;
 
-    thumbImg += `<div class= "col-right"> <img class="img-thumb" src="${items[i]}"> </div>`;
+    thumbImg +=     `<div class= "col-right">
+                     <img class="img-thumb" src="${items[i]}"> 
+                    </div>`;
 }
 
 //inserisco i DIV creati con il ciclo all'interno del contenitore .col-70 & .col-30
